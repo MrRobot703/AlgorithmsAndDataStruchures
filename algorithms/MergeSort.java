@@ -1,7 +1,6 @@
 package algorithms;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -54,7 +53,6 @@ public class MergeSort {
 
     public static <T extends Comparable<T>> void sort(T[] array) {
         sort(array, 0, array.length - 1);
-        System.out.println(Arrays.toString(array));
     }
 
     public static <T extends Comparable<T>> void sort(T[] array, int p, int r) {

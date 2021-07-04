@@ -8,7 +8,7 @@ public class QuickSort {
     public static <T extends Comparable<T>> List<T> sort(List<T> list) {
         List<T> less = new ArrayList<>();
         List<T> pivotList = new ArrayList<>();
-        List<T> more = new ArrayList<>();
+        List<T> grater = new ArrayList<>();
 
         if (list.size() <= 1) {
             return list;
@@ -19,17 +19,17 @@ public class QuickSort {
                 if(e.compareTo(pivot) < 0) {
                     less.add(e);
                 } else if (e.compareTo(pivot) > 0) {
-                    more.add(e);
+                    grater.add(e);
                 } else {
                     pivotList.add(e);
                 }
             }
 
             less = sort(less);
-            more = sort(more);
+            grater = sort(grater);
 
             less.addAll(pivotList);
-            less.addAll(more);
+            less.addAll(grater);
             return less;
         }
     }

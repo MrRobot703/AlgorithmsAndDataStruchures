@@ -4,16 +4,15 @@ import dataStruchures.queue.Queue;
 import dataStruchures.queue.exceptions.QueueEmptyException;
 import dataStruchures.queue.exceptions.QueueOutOfSizeException;
 
-import java.util.Arrays;
-
 public class CircularArrayQueue<E>  implements Queue<E> {
-    private Object[] array;
+    private E[] array;
     private int head;
     private int tail;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public CircularArrayQueue(int capacity) {
-        array = new Object[capacity];
+        array = (E[]) new Object[capacity];
         head = 0;
         tail = -1;
     }
@@ -45,7 +44,6 @@ public class CircularArrayQueue<E>  implements Queue<E> {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public E peek() {
         return (E) array[head];
     }
